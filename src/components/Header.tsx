@@ -1,50 +1,57 @@
 import React from 'react';
-import { Mail, Linkedin } from 'lucide-react';
+import { Mail, Linkedin, ArrowDown } from 'lucide-react';
 
 export default function Header() {
   return (
-    <header className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 to-white/80" />
-      </div>
+    <header className="relative min-h-[85vh] flex items-center px-4 sm:px-6 lg:px-8 pt-16 overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50/40 z-0" />
 
-      {/* Content */}
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+      {/* Decorative blobs */}
+      <div className="absolute top-20 right-[10%] w-72 h-72 bg-blue-100/30 rounded-full blur-3xl z-0 animate-float" />
+      <div className="absolute bottom-20 left-[5%] w-96 h-96 bg-gray-100/50 rounded-full blur-3xl z-0 animate-float-slow" />
+      <div className="absolute top-[40%] right-[30%] w-48 h-48 bg-indigo-100/20 rounded-full blur-3xl z-0 animate-float-slow" />
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="max-w-3xl">
+          <p className="text-sm font-medium tracking-widest text-blue-600 uppercase mb-3 animate-fade-in-down" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
+            Product Manager & Software Engineer
+          </p>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 tracking-tight leading-[1.1] animate-blur-in" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
             Paul Vangelakos
           </h1>
-          <h2 className="text-xl sm:text-2xl text-blue-600 mb-8">
-            Product Manager | Software Engineer | AI & Workflow Automation | SaaS & Fintech
-          </h2>
-          <div className="flex items-center justify-center md:justify-start gap-4">
+          <p className="text-lg sm:text-xl text-gray-500 leading-relaxed mb-8 max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+            Building scalable SaaS products at the intersection of AI, workflow automation, and fintech. Turning complex problems into elegant, user-centric solutions.
+          </p>
+          <div className="flex flex-wrap items-center gap-3 animate-fade-in-up" style={{ animationDelay: '0.55s', animationFillMode: 'both' }}>
             <a
               href="mailto:paulvangelakos@gmail.com"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 hover:scale-105 active:scale-95 transition-all duration-200"
             >
-              <Mail size={20} />
-              Email Me
+              <Mail size={18} />
+              Get in Touch
             </a>
             <a
               href="https://linkedin.com/in/paulvangelakos"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 bg-white/80 backdrop-blur-sm rounded-lg hover:bg-white transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-gray-200 bg-white text-gray-700 text-sm font-medium rounded-full hover:border-gray-300 hover:bg-gray-50 hover:scale-105 active:scale-95 transition-all duration-200"
             >
-              <Linkedin size={20} />
+              <Linkedin size={18} />
               LinkedIn
             </a>
           </div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <a
+        href="#impact"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-gray-400 hover:text-gray-600 transition-colors animate-bounce"
+        aria-label="Scroll to content"
+      >
+        <ArrowDown size={20} />
+      </a>
     </header>
   );
 }

@@ -1,13 +1,19 @@
 import React from 'react';
+import { ArrowUp } from 'lucide-react';
+import Navigation from './components/Navigation';
 import Header from './components/Header';
 import ImpactMetrics from './components/ImpactMetrics';
 import CaseStudies from './components/CaseStudies';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
+import { useScrollAnimation } from './hooks/useScrollAnimation';
 
 function App() {
+  useScrollAnimation();
+
   return (
     <div className="min-h-screen bg-white">
+      <Navigation />
       <Header />
       <main>
         <ImpactMetrics />
@@ -15,15 +21,19 @@ function App() {
         <Skills />
         <Contact />
       </main>
-      <footer className="bg-gray-50 py-8 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-gray-600 mb-2">© {new Date().getFullYear()} Paul Vangelakos. All rights reserved.</p>
-          <p className="text-sm text-gray-500">
-            Built by Paul Vangelakos using{' '}
-            <a href="https://react.dev" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">React</a>
-            {' '}and{' '}
-            <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">Tailwind CSS</a>
+      <footer className="bg-white border-t border-gray-100 py-6 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          <p className="text-sm text-gray-400">
+            &copy; {new Date().getFullYear()} Paul Vangelakos
           </p>
+          <a
+            href="#"
+            className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-blue-600 transition-colors group"
+            aria-label="Back to top"
+          >
+            Top
+            <ArrowUp size={14} className="group-hover:-translate-y-0.5 transition-transform" />
+          </a>
         </div>
       </footer>
     </div>
