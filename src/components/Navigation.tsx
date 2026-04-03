@@ -17,7 +17,6 @@ export default function Navigation() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      // Determine active section
       const sections = navLinks.map((l) => l.href.replace('#', ''));
       let current = '';
       for (const id of sections) {
@@ -46,7 +45,9 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <a
             href="#"
-            className="text-lg font-semibold tracking-tight text-gray-900 hover:text-blue-600 transition-colors"
+            className={`text-lg font-semibold tracking-tight transition-colors hover:text-blue-400 ${
+              scrolled ? 'text-gray-900' : 'text-white'
+            }`}
           >
             PV
           </a>
@@ -59,8 +60,12 @@ export default function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                    isActive ? 'text-blue-600' : 'text-gray-500'
+                  className={`text-sm font-medium transition-colors hover:text-blue-500 ${
+                    isActive
+                      ? 'text-blue-500'
+                      : scrolled
+                      ? 'text-gray-500'
+                      : 'text-white/70'
                   }`}
                 >
                   {link.label}
@@ -69,7 +74,11 @@ export default function Navigation() {
             })}
             <a
               href="mailto:paulvangelakos@gmail.com"
-              className="text-sm font-medium px-4 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 hover:scale-105 active:scale-95 transition-all duration-200"
+              className={`text-sm font-medium px-4 py-2 rounded-full hover:scale-105 active:scale-95 transition-all duration-200 ${
+                scrolled
+                  ? 'bg-gray-900 text-white hover:bg-gray-800'
+                  : 'bg-white text-gray-900 hover:bg-gray-100'
+              }`}
             >
               Get in Touch
             </a>
@@ -77,7 +86,11 @@ export default function Navigation() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors"
+            className={`md:hidden p-2 transition-colors ${
+              scrolled
+                ? 'text-gray-600 hover:text-gray-900'
+                : 'text-white/70 hover:text-white'
+            }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -91,7 +104,7 @@ export default function Navigation() {
             mobileOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="pb-4 border-t border-gray-100">
+          <div className={`pb-4 border-t ${scrolled ? 'border-gray-100' : 'border-white/10'}`}>
             <div className="flex flex-col gap-1 pt-3">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.replace('#', '');
@@ -102,8 +115,10 @@ export default function Navigation() {
                     onClick={() => setMobileOpen(false)}
                     className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${
                       isActive
-                        ? 'text-blue-600 bg-blue-50'
-                        : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                        ? 'text-blue-500 bg-blue-500/10'
+                        : scrolled
+                        ? 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                        : 'text-white/70 hover:text-white hover:bg-white/10'
                     }`}
                   >
                     {link.label}
@@ -112,7 +127,11 @@ export default function Navigation() {
               })}
               <a
                 href="mailto:paulvangelakos@gmail.com"
-                className="text-sm font-medium text-center mt-2 px-4 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors"
+                className={`text-sm font-medium text-center mt-2 px-4 py-2 rounded-full transition-colors ${
+                  scrolled
+                    ? 'bg-gray-900 text-white hover:bg-gray-800'
+                    : 'bg-white text-gray-900 hover:bg-gray-100'
+                }`}
               >
                 Get in Touch
               </a>
