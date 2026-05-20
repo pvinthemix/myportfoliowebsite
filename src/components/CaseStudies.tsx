@@ -59,13 +59,42 @@ const caseStudies: CaseStudy[] = [
     },
   },
   {
+    title: 'ShareSecure Replatform',
+    displayTitle: 'ShareSecure — Platform Modernization',
+    company: 'SaaS Fintech Platform',
+    description:
+      'Drove the full replatform of ShareSecure, replacing a slow, feature-blocked stack with a modern React frontend, new database, and AWS EventBridge event architecture.',
+    impact: '15-second load times to milliseconds — unlocking Landing Pages and Workspaces, key drivers of retention and revenue',
+    image: '/images/sharesecure-vdr.png',
+    alt: 'ShareSecure VDR Portal Activity Feed',
+    detail: {
+      context:
+        'ShareSecure was running on a legacy stack that had become a bottleneck: 15-second page load times, an unreliable CRM connection, and an architecture that made new feature development impractical. A full replatform was needed to restore product velocity and deliver the modern investor experience the market expected.',
+      role: [
+        'Defined the replatform scope and prioritization strategy alongside engineering leadership',
+        'Partnered with engineering on the migration to a new database, AWS EventBridge event architecture, React frontend, and Material UI component library',
+        'Translated architectural improvements into a product roadmap that capitalized on the new foundation immediately',
+      ],
+      howBuilt: [
+        'React frontend with Material UI component library for a consistent, modern design system',
+        'AWS EventBridge for event-driven integrations, replacing the brittle CRM connection with a reliable, decoupled event bus',
+      ],
+      outcomes: [
+        'Page load times dropped from 15 seconds to milliseconds',
+        'Landing Pages and Workspaces — both previously blocked by the old stack — shipped within weeks of the replatform completing',
+        'Modernized platform directly led to signing the largest enterprise contract in company history',
+      ],
+      link: 'https://altvia.com/vdr-portal/',
+      linkText: 'ShareSecure Platform',
+    },
+  },
+  {
     title: 'Landing Pages',
     company: 'SaaS Fintech Platform',
     description:
       'Led development of customized investor portals, transforming fundraising and reporting workflows with enhanced engagement features.',
     impact: '25% increase in investor engagement',
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    image: '/images/landingpage-ss.png',
     detail: {
       context:
         'Led research and market validation with Investor Relations & Fundraising teams to identify gaps in investor onboarding and engagement. Defined and delivered MVP for customized, branded investor portals with embedded fund materials, reporting dashboards, and targeted communications.',
