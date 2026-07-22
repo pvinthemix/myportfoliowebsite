@@ -171,21 +171,22 @@ const caseStudies: CaseStudy[] = [
     title: 'Online Courses',
     company: 'LMS platform',
     description:
-      'Spearheaded the launch of Online Courses as a core feature, leveraging UX design and advanced frontend capabilities to enhance user engagement and drive client acquisition.',
-    impact: 'Client acquisition of 2 major enterprise clients',
+      'Product Owner for Capillary LMS and the Deployed Medicine app, focused on Online Courses and CMS improvements, partnering with the Defense Health Agency (part of the Department of Defense) as our largest customer.',
+    impact: 'Delivered Online Courses and CMS improvements for the Department of Defense',
     image:
       'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     detail: {
       context:
-        'Spearheaded the development and launch of a comprehensive online learning platform, focusing on user experience and engagement metrics.',
+        'Product Owner for Capillary LMS and the Deployed Medicine app, delivering online learning for military medical training in partnership with the Defense Health Agency (part of the Department of Defense), our largest customer. Focused primarily on the Online Courses feature and CMS improvements.',
       role: [
-        'Led product strategy and roadmap development',
-        'Implemented analytics-driven feature prioritization',
-        'Coordinated cross-functional team collaboration',
-        'Managed enterprise client relationships',
+        'Product Owner driving the extension of the CMS into a full LMS through the Online Courses feature',
+        'Defined course authoring, enrollment, and progress tracking capabilities on top of existing CMS content workflows',
+        'Prioritized CMS improvements to support structured learning content and reuse across courses',
+        'Coordinated cross-functional collaboration with design and engineering to deliver the LMS experience',
       ],
       outcomes: [
-        'Successful acquisition of 2 major enterprise clients: Department of Defense, FEMA',
+        'Launched Online Courses for the Department of Defense (Defense Health Agency)',
+        'Deployed Medicine adopted as a training resource for military medical personnel',
       ],
       link: 'https://deployedmedicine.com/',
       linkText: 'Online Courses Platform Case Study',
